@@ -1,4 +1,4 @@
-// DOM Elements
+
 const header = document.getElementById("header")
 const themeToggle = document.getElementById("theme-toggle")
 const hamburger = document.querySelector(".hamburger")
@@ -6,10 +6,10 @@ const mobileNav = document.querySelector(".mobile-nav")
 const mobileNavLinks = document.querySelectorAll(".mobile-nav a")
 const currentYearEl = document.getElementById("current-year")
 
-// Set current year in footer
+
 currentYearEl.textContent = new Date().getFullYear()
 
-// Header scroll effect
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 10) {
     header.classList.add("scrolled")
@@ -18,26 +18,26 @@ window.addEventListener("scroll", () => {
   }
 })
 
-// Theme toggle
+
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode")
 
-  // Save theme preference
+ 
   const isDarkMode = document.body.classList.contains("dark-mode")
   localStorage.setItem("darkMode", isDarkMode)
 })
 
-// Check for saved theme preference
+
 const savedTheme = localStorage.getItem("darkMode")
 if (savedTheme === "true") {
   document.body.classList.add("dark-mode")
 }
 
-// Mobile navigation toggle
+
 hamburger.addEventListener("click", () => {
   mobileNav.classList.toggle("active")
 
-  // Animate hamburger
+  
   const spans = hamburger.querySelectorAll("span")
   if (mobileNav.classList.contains("active")) {
     spans[0].style.transform = "rotate(45deg) translate(5px, 5px)"
@@ -50,12 +50,12 @@ hamburger.addEventListener("click", () => {
   }
 })
 
-// Close mobile nav when clicking a link
+
 mobileNavLinks.forEach((link) => {
   link.addEventListener("click", () => {
     mobileNav.classList.remove("active")
 
-    // Reset hamburger
+   
     const spans = hamburger.querySelectorAll("span")
     spans[0].style.transform = "none"
     spans[1].style.opacity = "1"
@@ -63,13 +63,13 @@ mobileNavLinks.forEach((link) => {
   })
 })
 
-// Close mobile nav when clicking outside
+
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".mobile-nav") && !e.target.closest(".hamburger")) {
     if (mobileNav.classList.contains("active")) {
       mobileNav.classList.remove("active")
 
-      // Reset hamburger
+      
       const spans = hamburger.querySelectorAll("span")
       spans[0].style.transform = "none"
       spans[1].style.opacity = "1"
@@ -78,7 +78,7 @@ document.addEventListener("click", (e) => {
   }
 })
 
-// Smooth scrolling for anchor links
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault()
@@ -99,7 +99,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   })
 })
 
-// Intersection Observer for scroll animations
+
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -100px 0px",
@@ -113,15 +113,15 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
-// Add animation classes to elements
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Add animation classes to section titles
+  
   document.querySelectorAll(".section-title").forEach((el) => {
     el.classList.add("opacity-0", "translate-y-10")
     observer.observe(el)
   })
 
-  // Add animation to sections
+  
   document.querySelectorAll(".section").forEach((section) => {
     const elements = section.querySelectorAll(".animate")
     elements.forEach((el, index) => {
@@ -132,17 +132,16 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Helper function to add animation class
+
 document.querySelectorAll(".section").forEach((section) => {
   section.addEventListener("animationend", () => {
     section.classList.add("animate-in")
   })
 })
 
-// CSS animation helper
+
 document.documentElement.style.setProperty("--animate-duration", "0.8s")
 
-// Add animate-in class
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.add("loaded")

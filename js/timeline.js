@@ -1,6 +1,6 @@
-// Timeline Section
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Timeline data
+  
   const timelineEvents = [
     {
       id: 1,
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const timelineContainer = document.querySelector(".timeline-container")
 
-  // Generate timeline events
+  
   timelineEvents.forEach((event, index) => {
     const timelineEvent = document.createElement("div")
     timelineEvent.classList.add("timeline-event")
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     timelineContainer.appendChild(timelineEvent)
 
-    // Add click event to make event active
+    
     timelineEvent.addEventListener("click", () => {
       document.querySelectorAll(".timeline-event").forEach((el) => {
         el.classList.remove("active")
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Auto-update active event based on scroll position
+  
   window.addEventListener("scroll", () => {
     if (!timelineContainer) return
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerHeight = timelineContainer.offsetHeight
     const viewportHeight = window.innerHeight
 
-    // Calculate which event should be active based on scroll position
+   
     const scrollPercentage = Math.max(
       0,
       Math.min(1, (viewportHeight - containerTop) / (containerHeight + viewportHeight)),
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const eventIndex = Math.min(timelineEvents.length - 1, Math.floor(scrollPercentage * timelineEvents.length))
 
-    // Update active event
+   
     const timelineEventElements = document.querySelectorAll(".timeline-event")
     timelineEventElements.forEach((el, i) => {
       if (i === eventIndex) {

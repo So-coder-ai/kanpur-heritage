@@ -1,6 +1,6 @@
-// Quiz Section
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Quiz questions
+  
   const quizQuestions = [
     {
       id: 1,
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let score = 0
   let isAnswered = false
 
-  // Initialize quiz
+ 
   function renderQuestion() {
     const question = quizQuestions[currentQuestion]
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </button>
         `
 
-    // Add event listeners to options
+    
     const options = quizContainer.querySelectorAll(".quiz-option")
     options.forEach((option) => {
       option.addEventListener("click", () => {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         isAnswered = true
 
-        // Mark correct and incorrect answers
+       
         options.forEach((opt) => {
           if (opt.dataset.option === correctAnswer) {
             opt.classList.add("correct")
@@ -115,18 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
 
-        // Update score
+        
         if (selectedOption === correctAnswer) {
           score++
         }
 
-        // Enable next button
+       
         const nextBtn = quizContainer.querySelector(".next-btn")
         nextBtn.disabled = false
       })
     })
 
-    // Add event listener to next button
+   
     const nextBtn = quizContainer.querySelector(".next-btn")
     nextBtn.addEventListener("click", () => {
       if (currentQuestion < quizQuestions.length - 1) {
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Render quiz result
+  
   function renderResult() {
     const percentage = (score / quizQuestions.length) * 100
     let message = ""
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `
 
-    // Add event listener to restart button
+   
     const restartBtn = document.getElementById("restart-quiz")
     restartBtn.addEventListener("click", () => {
       currentQuestion = 0
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderQuestion()
     })
 
-    // Trigger confetti if score is good
+    
     if (percentage >= 70) {
       confetti({
         particleCount: 100,
@@ -186,10 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Import confetti-js
+  
   const confetti = window.confetti || (() => {})
 
-  // Start the quiz
+  
   renderQuestion()
 })
 

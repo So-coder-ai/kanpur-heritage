@@ -1,6 +1,6 @@
-// Gallery Section
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Gallery data
+  
   const galleryItems = [
     {
       id: 1,
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeCategory = "all"
 
-  // Generate gallery items
+ 
   function renderGallery() {
     galleryGrid.innerHTML = ""
 
@@ -98,32 +98,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
       galleryGrid.appendChild(galleryItem)
 
-      // Add click event to open lightbox
+     
       galleryItem.addEventListener("click", () => {
         openLightbox(item)
       })
     })
   }
 
-  // Initialize gallery
+  
   renderGallery()
 
-  // Filter functionality
+  
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      // Update active button
+      
       filterButtons.forEach((btn) => btn.classList.remove("active"))
       button.classList.add("active")
 
-      // Update active category
+      
       activeCategory = button.dataset.filter
 
-      // Re-render gallery
+      
       renderGallery()
     })
   })
 
-  // Open lightbox
+  
   function openLightbox(item) {
     lightboxImage.src = item.image
     lightboxTitle.textContent = item.title
@@ -132,19 +132,19 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.classList.add("active")
   }
 
-  // Close lightbox
+  
   closeLightbox.addEventListener("click", () => {
     lightbox.classList.remove("active")
   })
 
-  // Close lightbox when clicking outside content
+  
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove("active")
     }
   })
 
-  // Close lightbox with escape key
+  
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && lightbox.classList.contains("active")) {
       lightbox.classList.remove("active")
