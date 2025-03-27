@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Heritage of Kanpur</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">Kanpur Heritage</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#map">3D Map</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#map">3D Map</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div id="hero-canvas"></div>
+        <div class="hero-content">
+            <h1>The Heritage of Kanpur</h1>
+            <p>Explore the rich cultural and historical legacy of one of India's most significant industrial cities</p>
+            <div class="hero-buttons">
+                <button class="btn primary-btn">Start Exploring</button>
+                <button class="btn outline-btn">Learn More</button>
+            </div>
+        </div>
+        <a href="#map" class="scroll-down">
+            <span>Explore Kanpur</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+  <!-- 3D Map Section (Now a Moving Image) -->
+<section id="map" class="section">
+    <div class="container">
+        <h2 class="section-title">Explore Kanpur's Heritage</h2>
+        <div class="map-container">
+            <img src="imagess/kanpur-city-map.webp" alt="Kanpur Map" id="moving-map">
+        </div>
+    </div>
+</section>
+
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Historical Timeline</h2>
+            <div class="timeline-container">
+                <!-- Timeline events will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Heritage Gallery</h2>
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="heritage">Heritage</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+            </div>
+            <div class="gallery-grid">
+                <!-- Gallery items will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="close-lightbox"><i class="fas fa-times"></i></button>
+            <div class="lightbox-image">
+                <img src="/placeholder.svg" alt="">
+            </div>
+            <div class="lightbox-details">
+                <h3 class="lightbox-title"></h3>
+                <p class="lightbox-description"></p>
+                <div class="lightbox-buttons">
+                    <button class="btn outline-btn">View Virtual Tour</button>
+                    <button class="btn ghost-btn">Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Test Your Knowledge</h2>
+            <div class="quiz-container">
+                <div class="quiz-card">
+                    <!-- Quiz content will be generated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>The Heritage of Kanpur</h3>
+            <p>Discover the rich history and cultural heritage of Kanpur</p>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#map">3D Map</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#quiz">Quiz</a>
+            </div>
+            <p class="copyright">© <span id="current-year"></span> The Heritage of Kanpur. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/three-hero.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-map.js"></script>
+
+    <script src="js/timeline.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
+
